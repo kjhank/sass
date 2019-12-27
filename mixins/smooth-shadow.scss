@@ -6,6 +6,3 @@
               #{$offset-x * 16/3} #{$offset-y * 16/3} #{$offset-y * 16/3} rgba($color, 0.2)
 }
 
-// Creates a smoother box shadow by overlaying 5 shadows with increasing radii and offsets combined with colors with 20% opacity
-// Usage: `@include shadow(horizontal offset in whichever units, vertical offset in whichever units, color in whichever format)`
-// eg. `@include shadow(5px, 10px, #222)` or `@include shadow(0, 1rem, $shadow-color)` or `@include shadow(1ex, 2ch, var(--shadow-color)`, etc.

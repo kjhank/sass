@@ -1,0 +1,85 @@
+@mixin rwd($query, $mobileFirst: false) {
+ $queries: (
+   'xs'     : (max-width: 600px),
+   's'      : (max-width: 900px),
+   'm'      : (max-width: 1200px),
+   'l'      : (max-width: 1600px),
+   'xl'     : (max-width: 1800px),
+   'ultra'  : (max-width: 2500px),
+   'touch'  : (pointer: coarse),
+   'mouse'  : (pointer: fine)
+ );
+
+  $queries-mf: (
+    'xs'      : (min-width: 601px),
+    's'       : (min-width: 901px),
+    'm'       : (min-width: 1201px),
+    'l'       : (min-width: 1601px),
+    'xl'      : (min-width: 1801px),
+    'ultra'   : (min-width: 2501px),
+    'touch'   : (pointer: coarse),
+    'mouse'   : (pointer: fine)
+  );
+
+  @if ($mobileFirst != false) {
+    @if map-has-key($queries-mf, $query) {
+
+      @media #{inspect(map-get($queries-mf, $query))} {
+        @content;
+      }
+    } @else {
+      @media (min-width: $query) {
+        @content;
+      }
+    }
+  } @else {
+    @if map-has-key($queries, $query) {
+
+      @media #{inspect(map-get($queries, $query))} {
+        @content;
+      }
+    } @else {
+      @media (max-width: $query) {
+        @content;
+      }
+    }
+  }
+}
+
+// Simplifies usage of media queries in both desktop-first and mobile-first variants + the ability to detect touch input. Defaults to desktop-first*.
+// Usage:
+//  @include rwd(xs) {
+//    font-size: x-small;
+//  }
+//
+// Produces: 
+//  @media (max-width: 600px) {
+//    font-size: x-small;
+//  }
+//
+// or
+//
+//  @include rwd(l, true) {
+//    line-height: 2;
+//  }
+//
+// Produces:
+//
+//  @media (min-width: 1601px) {
+//    line-height; 2;
+//  }
+//
+// or
+//
+//  @include rwd(touch) {
+//    padding: 2em;
+//  }
+//
+// Produces:
+//  @media(pointer: coarse) {
+//    padding; 2em;
+// }
+//
+// *) if you prefer to use mobile-first as default, just change `false` on line 1 to `true` like so:
+// @mixin rwd($query, $mobileFirst: true) {// ...}
+

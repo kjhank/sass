@@ -6,25 +6,25 @@ Defaults to desktop-first*. Device-agnostic.
 
 #### Available breakpoints
 
-Desktop-first queries:
-* Extra-small: `xs` - maximum width: 600px,
-* Small: `s` - maximum width: 900px,
-* Medium: `m` - maximum width: 1200px,
-* Large: `l` - maximum width: 1600px,
-* Extra-large: `xl` - maximum width: 1800px,
-* Ultra-wide: `ultra` - maximum width: 2500px
+* Desktop-first queries:
+  * Extra-small: `xs` - maximum width: 600px,
+  * Small: `s` - maximum width: 900px,
+  * Medium: `m` - maximum width: 1200px,
+  * Large: `l` - maximum width: 1600px,
+  * Extra-large: `xl` - maximum width: 1800px,
+  * Ultra-wide: `ultra` - maximum width: 2500px
   
-Similarily, mobile-first queries:
-* Extra-small: `xs` - minimum width: 601px,
-* Small: `s` - minimum width: 901px,
-* Medium: `m` - minimum width: 1201px,
-* Large: `l` - minimum width: 1601px,
-* Extra-large: `xl` - minimum width: 1801px,
-* Ultra-wide: `ultra` - minimum width: 2501px
+* Similarily, mobile-first queries:
+  * Extra-small: `xs` - minimum width: 601px,
+  * Small: `s` - minimum width: 901px,
+  * Medium: `m` - minimum width: 1201px,
+  * Large: `l` - minimum width: 1601px,
+  * Extra-large: `xl` - minimum width: 1801px,
+  * Ultra-wide: `ultra` - minimum width: 2501px
 
-Plus touch/mouse input detection:
-* `touch` produces `pointer: coarse`,
-* `mouse` produces `pointer: fine`
+* Plus touch/mouse input detection:
+  * `touch` produces `pointer: coarse`,
+  * `mouse` produces `pointer: fine`
 
 ### Usage:
 * Desktop-first breakpoint:
